@@ -17,6 +17,7 @@ PRODUCT_PACKAGES += \
     libdownmixaidl \
 
 BOARD_VENDOR_SEPOLICY_DIRS += device/google/gs-common/audio/sepolicy/aidl
+BOARD_VENDOR_SEPOLICY_DIRS += device/google/gs-common/audio/sepolicy/hdmi_audio
 
 include device/google/gs-common/audio/common.mk
 
