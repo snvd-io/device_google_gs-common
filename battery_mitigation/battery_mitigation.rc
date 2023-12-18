@@ -1,6 +1,7 @@
 on property:vendor.thermal.link_ready=1
     mkdir /data/vendor/mitigation 0755 system system
     chown system system /data/vendor/mitigation
+    chown system system /sys/devices/virtual/pmic/mitigation/br_stats/enable_br_stats
     start vendor.battery_mitigation
 
 on property:vendor.thermal.link_ready=1 && property:ro.boot.bootreason=reboot,uvlo,pmic,if && property:sys.boot.reason=reboot,uvlo,pmic,if
