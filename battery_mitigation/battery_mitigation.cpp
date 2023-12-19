@@ -73,6 +73,7 @@ const struct MitigationConfig::Config cfg = {
 };
 
 const struct MitigationConfig::EventThreadConfig eventThreadCfg = {
+    .BrownoutStatsEnablePath = "/sys/devices/virtual/pmic/mitigation/br_stats/enable_br_stats",
     .NumericSysfsStatPaths = {
         {"cpu0_freq", "/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq"},
         {"cpu1_freq", "/sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq"},
