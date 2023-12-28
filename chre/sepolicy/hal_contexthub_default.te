@@ -1,5 +1,6 @@
-# Allow context hub HAL to communicate with daemon via socket
-unix_socket_connect(hal_contexthub_default, chre, chre)
+#
+# Context hub multiclient HAL common selinux policies
+#
 
 # Permit communication with AoC
 allow hal_contexthub_default aoc_device:chr_file rw_file_perms;
