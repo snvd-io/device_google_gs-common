@@ -1,3 +1,5 @@
+USE_AUDIO_HAL_AIDL := true
+
 DEVICE_MANIFEST_FILE += device/google/gs-common/audio/aidl/manifest.xml
 
 # Audio HALs
