@@ -29,3 +29,5 @@ allow battery_mitigation mitigation_vendor_data_file:file create_file_perms;
 binder_use(battery_mitigation)
 # Allow battery_mitigation to listen brownout event by epoll_wait
 wakelock_use(battery_mitigation)
+# Allow battery_mitigation to run aidl service
+add_service(battery_mitigation, hal_battery_mitigation_service)
