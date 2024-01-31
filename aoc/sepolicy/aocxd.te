@@ -23,3 +23,6 @@ wakelock_use(aocxd);
 
 # add aocx service to the domain
 add_service(aocxd, aocx);
+
+# allow managing thread priority
+allow aocxd self:global_capability_class_set sys_nice;
