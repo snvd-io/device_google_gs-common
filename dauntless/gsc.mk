@@ -19,5 +19,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += citadel_integration_tests \
                           pwntest \
                           nugget_targeted_tests \
-                          CitadelProvision
+                          CitadelProvision \
+                          nugget_aidl_test_weaver
 endif
