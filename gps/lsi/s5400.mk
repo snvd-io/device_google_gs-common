@@ -14,3 +14,6 @@ PRODUCT_PACKAGES += \
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     PRODUCT_VENDOR_PROPERTIES += vendor.gps.aol.enabled=true
 endif
+
+# Enable Pixel GNSS HAL
+include device/google/gs-common/gps/pixel/pixel_gnss_hal.mk
