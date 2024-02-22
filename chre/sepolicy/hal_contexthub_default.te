@@ -32,3 +32,6 @@ wakelock_use(hal_contexthub_default)
 
 # Allow context hub HAL to block suspend, which is required to use EPOLLWAKEUP
 allow hal_contexthub_default self:global_capability2_class_set block_suspend;
+
+# Allow binder calls with clients
+binder_call(hal_contexthub_default, hal_sensors_default)
