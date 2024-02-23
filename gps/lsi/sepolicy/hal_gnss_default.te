@@ -8,3 +8,6 @@ binder_call(hal_gnss_default, gnssd);
 
 #Read GPS property
 get_prop(hal_gnss_default, vendor_gps_prop)
+
+#IPC between pixel and vendor HAL
+binder_call(hal_gnss_default, hal_gnss_pixel)
