@@ -11,6 +11,17 @@ modules_dir=
 system_modules_dir=
 vendor_modules_dir=
 
+pagesize=$(getconf PAGESIZE)
+bootoption=$(getprop ro.product.build.16k_page.enabled)
+if [ "$pagesize" != "4096" ] && [ "$bootoption" == "true" ]; then
+    echo "Device has page size $pagesize , skip loading modules from vendor_dlkm/system_dlkm because all modules are stored on vendor_boot"
+    setprop vendor.common.modules.ready 1
+    setprop vendor.device.modules.ready 1
+    setprop vendor.all.modules.ready 1
+    setprop vendor.all.devices.ready 1
+    return 0
+fi
+
 for dir in system vendor; do
   for f in /${dir}/lib/modules/*/modules.dep /${dir}/lib/modules/modules.dep; do
     if [[ -f "$f" ]]; then
@@ -52,10 +63,10 @@ if [ $# -eq 1 ]; then
 else
   # Set property even if there is no insmod config
   # to unblock early-boot trigger
-  setprop vendor.common.modules.ready
-  setprop vendor.device.modules.ready
-  setprop vendor.all.modules.ready
-  setprop vendor.all.devices.ready
+  setprop vendor.common.modules.ready 1
+  setprop vendor.device.modules.ready 1
+  setprop vendor.all.modules.ready 1
+  setprop vendor.all.devices.ready 1
   exit 1
 fi
 
