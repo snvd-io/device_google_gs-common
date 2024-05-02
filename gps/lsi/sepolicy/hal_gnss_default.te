@@ -11,3 +11,6 @@ get_prop(hal_gnss_default, vendor_gps_prop)
 
 #IPC between pixel and vendor HAL
 binder_call(hal_gnss_default, hal_gnss_pixel)
+
+# Allow connect to gnss service
+allow hal_gnss_default vendor_gps_file:fifo_file create_file_perms;
