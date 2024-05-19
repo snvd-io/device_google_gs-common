@@ -26,3 +26,11 @@ prebuilt_etc {
     src: "vendor.android.hardware.camera.preview-dis.xml",
     sub_dir: "permissions",
 }
+
+prebuilt_etc {
+    name: "concurrent_foldable_dual_front_xml",
+    vendor: true,
+    filename: "com.google.pixel.camera.concurrent_foldable_dual_front.xml",
+    src: "com.google.pixel.camera.concurrent_foldable_dual_front.xml",
+    sub_dir: "permissions",
+}
