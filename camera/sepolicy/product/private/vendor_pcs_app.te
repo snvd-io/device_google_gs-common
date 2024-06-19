@@ -9,6 +9,7 @@ allow vendor_pcs_app {
     audioserver_service
     cameraserver_service
     camera_cameraidremapper_service
+    camera_lyricconfigprovider_service
     drmserver_service
     mediametrics_service
     mediaserver_service

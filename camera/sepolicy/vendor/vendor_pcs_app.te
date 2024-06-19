@@ -1,5 +1,5 @@
 allow vendor_pcs_app {
-    vendor_camera_lyricconfigprovider_service
+    camera_lyricconfigprovider_service
     camera_cameraidremapper_service
     edgetpu_app_service
 }:service_manager find;
