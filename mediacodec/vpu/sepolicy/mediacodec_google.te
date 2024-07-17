@@ -1,0 +1,5 @@
+type mediacodec_google, domain;
+type mediacodec_google_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(mediacodec_google)
+
