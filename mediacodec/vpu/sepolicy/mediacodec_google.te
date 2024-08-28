@@ -22,6 +22,9 @@ neverallow mediacodec_google { file_type fs_type }:file execute_no_trans;
 neverallow mediacodec_google domain:{ udp_socket rawip_socket } *;
 neverallow mediacodec_google { domain userdebug_or_eng(`-su') }:tcp_socket *;
 
+# Allow HAL to send trace packets to Perfetto
+userdebug_or_eng(`perfetto_producer(mediacodec_google)')
+
 userdebug_or_eng(`
  allow mediacodec_google vendor_media_data_file:dir rw_dir_perms;
  allow mediacodec_google vendor_media_data_file:file create_file_perms;
